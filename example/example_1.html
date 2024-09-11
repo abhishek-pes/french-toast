@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <button id="toast-btn-1"> Click Me For a Success Toast Messages </button>
+        <button id="toast-btn-2">Click Me For a Warning Toast Message</button>
+    </div>
+
+    <french-toast id="toast-msg-1" duration="2000" open="false" placement="top right" type="success">
+        This is a success toast message
+    </french-toast>
+
+    <french-toast id="toast-msg-2" duration="2000" open="false" placement="bottom center" type="warning">
+        This is an warning toast message
+    </french-toast>
+
+    <script type="module" src="../frenchToast.js"></script>
+
+    <script>
+        const btn1 = document.getElementById('toast-btn-1')
+        const toast1 = document.getElementById('toast-msg-1')
+
+        btn1.addEventListener('click', () => {
+            toast1.setAttribute('open','true')
+        })
+
+
+        const btn2 = document.getElementById('toast-btn-2')
+        const toast2 = document.getElementById('toast-msg-2')
+
+        btn2.addEventListener('click', () => {
+            toast2.setAttribute('open','true')
+        })
+    </script>
+</body>
+</html>
